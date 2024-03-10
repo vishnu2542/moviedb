@@ -1,0 +1,535 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* body */
+body {
+  background-color: black;
+  --best: gold;
+  font-family: montserrat;
+}
+
+/* page loader */
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: ring 2s linear infinite;
+}
+
+@keyframes ring {
+  0% {
+      transform: rotate(0deg);
+      box-shadow: 1px 5px 2px #e65c00;
+  }
+
+  50% {
+      transform: rotate(180deg);
+      box-shadow: 1px 5px 2px #18b201;
+  }
+
+  100% {
+      transform: rotate(360deg);
+      box-shadow: 1px 5px 2px #0456c8;
+  }
+}
+
+.ring:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, .3);
+}
+
+.sp {
+  color: #737373;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 200px;
+  animation: text 3s ease-in-out infinite;
+}
+
+@keyframes text {
+  50% {
+      color: black;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* fullcontent */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(27, 27, 27);
+  height: 50px;
+  border-radius: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  position: fixed;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+}
+
+.logo {
+  color: white;
+  padding-top: 30px;
+  height: 50px;
+  margin-left: 0px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons button {
+  margin-left: 2px;
+  border-radius: 30px;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  background-color: var(--best);
+  border: none;
+  color: black;
+  font-weight: bolder;
+}
+
+.buttons button:hover {
+  background-color: rgba(35, 35, 35, 0.795);
+  color: white;
+}
+
+.buttons button a b:hover {
+  color: white;
+}
+
+
+
+.container {
+  position: relative;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 0px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 50px;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(35, 35, 35, 0.795);
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar ul li {
+  margin-top: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 200px;
+  color: white;
+}
+
+.sidebar ul li a:hover {
+  color: var(--best);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+
+.content {
+  padding: 20px;
+  min-height: calc(100vh - 50px);
+}
+
+.arrow {
+  position: fixed;
+  top: 15%;
+  left: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  background-color: #333;
+  z-index: 9999;
+  border-radius: 10px;
+}
+
+
+.image {
+  background-size: cover;
+  transition: background-image 1s ease;
+  height: 500px;
+ 
+}
+
+
+.search-container-main {
+  display: flex;
+  align-items: center;
+  padding-top: 200px;
+  margin-left: 15%;
+}
+
+.search-input-main {
+  width: 60vw;
+  height: 25px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 30px;
+  color: black;
+  padding-left: 30px;
+}
+
+.search-input-main::placeholder {
+  color: black;
+}
+
+.search-button-main {
+  color: black;
+  background-color: var(--best);
+  cursor: pointer;
+  margin-left: -80px;
+  border-radius: 40px;
+  height: 50px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.search-button-main:hover {
+  background-color: black;
+  color: white;
+}
+
+.favorite {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  margin-top: 5%;
+}
+
+.favorite h1 {
+  color: aliceblue;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 2px black;
+}
+
+.check {
+  border-radius: 30px;
+  height: 50px;
+  background-color: var(--best);
+  margin-left: 25px;
+  border: none;
+  margin-top: 40px;
+  justify-content: space-between;
+  border: 1px solid black;
+  font-weight: bolder;
+}
+
+.check:hover {
+  color: white;
+  background-color: rgba(35, 35, 35, 0.795);
+}
+
+.popular {
+  margin-top: 20px;
+}
+
+.movies-section {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: black;
+}
+
+.movie-card {
+  background-color: rgba(35, 35, 35, 0.795);
+  margin: 15px 15px 15px 15px;
+  transition: transform 0.3s ease;
+  height: 500px;
+  width: 245px;
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+
+.movie-card button {
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+}
+
+
+.review-section {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(35, 35, 35, 0.795);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img2 {
+  background-image: url("https://davidmorrell.net/wp-content/uploads/2018/10/Tomislav-INSPECTOR-OF-THE-DEAD-500x358.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-section {
+  padding: 50px 20px;
+  background-color: rgba(35, 35, 35, 0.795);
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.contact-section {
+  padding: 50px 20px;
+  background-color: rgba(35, 35, 35, 0.795);
+  color: #fff;
+  text-align: center;
+}
+
+.contact-section p {
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+}
+
+.contact-form textarea::placeholder {
+  color: #0f0e0e;
+}
+
+.contact-form input[type="submit"] {
+  width: 25%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--best);
+  color: BLACK;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bolder;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: rgba(35, 35, 35, 0.795);
+  color: white;
+}
+
+.footer {
+  background-color: rgba(35, 35, 35, 0.795);
+  height: 150px;
+  margin-top: 0px;
+  padding-top: 20px;
+}
+
+.social-media ul {
+  list-style: none;
+  display: flex;
+  margin-left: 35%;
+  font-size: 30px;
+}
+
+.social-media ul li a {
+  text-decoration: none;
+}
+
+.social-media ul li a i {
+  color: white;
+  margin: 10px;
+}
+
+.social-media ul li a i:hover {
+  color: var(--best);
+}
+
+.imp ul {
+  list-style: none;
+  display: flex;
+  margin-left: 34.6%;
+  font-size: 25px;
+}
+
+.imp ul li {
+  color: white;
+  margin: 0px;
+}
+
+.imp ul li a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+
+.imp ul li :hover {
+  color: var(--best);
+}
+
+/* extras */
+.favorite-icon {
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.favorite-icon.active {
+  color: red;
+}
+
+.star.filled {
+  color: yellow;
+}
+
+.animated {
+  animation: mv 0.5s ease-out;
+}
+
+@keyframes mv {
+  0% {
+      opacity: 0;
+      transform: scale(0);
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.animate{
+  animation: anm1 1s ease;
+}
+
+@keyframes anm1 {
+  0%{
+      transform: translateX(-200px);
+      opacity: 0.5;
+  }
+  100%{
+      transform: translateX(0px);
+      opacity: 1;
+  }
+}
+
+.review-card {
+  background-color: rgba(35, 35, 35, 0.795);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+  text-align: center;
+}
+
+.review-card p {
+  margin: 5px 0;
+}
+
+.delete-review-btn {
+  background-color: var(--best);
+  color: black;
+  font-weight: bolder;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.delete-review-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* responsiveness */
+
+@media (max-width: 767px) {
+  .footer {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .buttons button {
+    margin-left: 2px;
+    border-radius: 30px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    background-color: var(--best);
+    border: none;
+    color: black;
+  }
+
+  .buttons button:hover {
+    background-color: rgba(35, 35, 35, 0.795);
+    color: white;
+  }
+
+  .logo {
+    color: white;
+    padding-top: 30px;
+    height: 40px;
+    margin-left: 0px;
+  }
+}
+
+

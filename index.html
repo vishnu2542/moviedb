@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div id="loader" class="center">
+        <div class="ring"></div>
+        <span class="sp">loading...</span>
+    </div>   
+
+    <div id="fullcontent" class="hidden">
+        <!-- audio -->
+        <audio autoplay onended="this.muted = true" style="display: none;">
+            <source src="audio.mp3" type="audio/mpeg">
+        </audio>
+        <!-- navbar -->
+        <div class="navbar" id="nav">
+            <ul>
+                <li>
+                    <a href="#home" style="text-decoration:none;">
+                        <h2 class="logo">Uniflix</h2>
+                    </a>
+                </li>
+            </ul>
+            <ul class="buttons">
+                <li><a href="login.html"><button>Login</button></a></li>
+                <li><a href="login.html"><button>Sign up</button></a></li>
+            </ul>
+        </div>
+        <!-- container -->
+        <div class="container">
+
+            <div class="sidebar" id="sidebar">
+                <ul style="list-style: none;">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/?lang=en-in"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/login"><i class="fa-brands fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="arrow" onclick="toggleSidebar()">
+                    >
+                </div>
+                <div class="image">
+
+                    <div class="search-container-main">
+                        <input type="text" class="search-input-main" placeholder="Search for a your favorite movie...  "
+                            onkeydown="handleSearch(event)" id="searchInputMain">
+                        <button class="search-button-main" onclick="searchFunction()"><b>Search</b></button>
+                    </div>
+
+                    <div class="favorite">
+                        <h1>
+                            Top of the week</h1>
+                        <a href="top.html" style="text-decoration: none;"><button class="check">check it now
+                                ></button></a>
+                    </div>
+                </div>
+
+                <div class="popular">
+                    <span style="color: var(--best);font-size: 50px;">|</span>
+                    <span style="color: rgb(255, 255, 255);font-size: 40px;">Popular movies</span>
+                </div>
+
+                <div class="movies-section" id="moviesSection2">
+                    <div class="movie-card"><img
+                            src="https://1.bp.blogspot.com/-plUFsKzLlFo/YCk6StaQNpI/AAAAAAAAAho/bbPb7g1eo1cl26xbhkmxeYvW-r8I09TtQCLcBGAsYHQ/s1339/IMG_20210214_185515.jpg"
+                            alt="" height="60%" width="100%" style="border-radius: 5px">
+                        <h3 style=" padding-left: 10px">Pathan</h3>
+                        <p style=" padding-left: 10px">2023</p>
+                        <button
+                            style="border:0px; background-color:var(--best); margin-top:5px; border-radius: 10px; height:30px"
+                            onclick="showReviewForm('Pathan')">Add Review</button>
+                        <i class="far fa-solid fa-heart favorite-icon" onclick="toggleFavorite(this)"></i>
+
+                        <div class="rating">
+                            <span class="star" onclick="addRating(1, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(2, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(3, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(4, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(5, this.parentNode.parentNode)">★</span>
+                        </div>
+
+                        <div class="watch" style="width: 100%;">
+                            <button
+                                style="width:100%;margin-top:15px;height:28px;background-color: rgba(35, 35, 35, 0.795);"><a
+                                    href="https://www.primevideo.com/detail/Pathaan/0FIVK55HUFIIADBSNC585CZFDP"
+                                    style="text-decoration: none;color: white;">Watch now</a></button>
+                        </div>
+                    </div>
+
+                    <div class="movie-card"><img
+                            src="https://1.bp.blogspot.com/-Oc9FPg_6kNc/XdEpzyRye-I/AAAAAAABANk/uBrdjFx4QTYONeAk4vpRnjr4s2PGpiBzgCLcBGAsYHQ/s1600/tanhaji-poster-2.jpg"
+                            alt="" height="60%" width="100%" style="border-radius: 5px">
+                        <h3 style=" padding-left: 10px">Tanhaji</h3>
+                        <p style=" padding-left: 10px">2020</p>
+                        <button
+                            style="border:0px; background-color:var(--best); margin-top:5px; border-radius: 10px; height:30px"
+                            onclick="showReviewForm('Tanhaji')">Add Review</button>
+                        <i class="far fa-solid fa-heart favorite-icon" onclick="toggleFavorite(this)"></i>
+
+                        <div class="rating">
+                            <span class="star" onclick="addRating(1, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(2, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(3, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(4, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(5, this.parentNode.parentNode)">★</span>
+                        </div>
+
+                        <div class="watch" style="width: 100%;">
+                            <button
+                                style="width:100%;margin-top:15px;height:28px;background-color: rgba(35, 35, 35, 0.795);;"><a
+                                    href="https://www.hotstar.com/in/movies/tanhaji/1260022117/watch"
+                                    style="text-decoration: none;color: white;">Watch now</a></button>
+                        </div>
+                    </div>
+
+                    <div class="movie-card"><img
+                            src="https://i.pinimg.com/originals/b3/d9/ed/b3d9ed5e8b032ac548265863b3c044ad.jpg" alt=""
+                            height="60%" width="100%" style="border-radius: 5px">
+                        <h3 style=" padding-left: 10px">Kgf-2</h3>
+                        <p style=" padding-left: 10px">2022</p>
+                        <button
+                            style="border:0px; background-color:var(--best); margin-top:5px; border-radius: 10px; height:30px"
+                            onclick="showReviewForm(Kgf-2)">Add Review</button>
+                        <i class="far fa-solid fa-heart favorite-icon" onclick="toggleFavorite(this)"></i>
+
+                        <div class="rating">
+                            <span class="star" onclick="addRating(1, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(2, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(3, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(4, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(5, this.parentNode.parentNode)">★</span>
+                        </div>
+
+                        <div class="watch" style="width: 100%;">
+                            <button
+                                style="width:100%;margin-top:15px;height:28px;background-color: rgba(35, 35, 35, 0.795);;"><a
+                                    href="https://www.hotstar.com/in/movies/kgf/1260105754/watch"
+                                    style="text-decoration: none;color: white;">Watch now</a></button>
+                        </div>
+                    </div>
+
+                    <div class="movie-card"><img
+                            src="https://th.bing.com/th/id/OIP.tNguNW9JxnJxwPC4-fuqQQHaLH?w=202&h=303&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            alt="" height="60%" width="100%" style="border-radius: 5px">
+                        <h3 style=" padding-left: 10px">RRR</h3>
+                        <p style=" padding-left: 10px">2022</p>
+                        <button
+                            style="border:0px; background-color:var(--best); margin-top:5px; border-radius: 10px; height:30px"
+                            onclick="showReviewForm('RRR')">Add Review</button>
+                        <i class="far fa-solid fa-heart favorite-icon" onclick="toggleFavorite(this)"></i>
+
+                        <div class="rating">
+                            <span class="star" onclick="addRating(1, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(2, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(3, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(4, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(5, this.parentNode.parentNode)">★</span>
+                        </div>
+
+                        <div class="watch" style="width: 100%;">
+                            <button
+                                style="width:100%;margin-top:15px;height:28px;background-color: rgba(35, 35, 35, 0.795);;"><a
+                                    href="https://www.hotstar.com/in/paywall?content_id=1260108122&content_title=RRR&content_type=MOVIE&failed_pc_entitlement_context=%7B%22playback_list_platforms%22%3A%22web%22%2C%22tags%22%3A%22vip%2Cpaid%22%7D&failed_pc_entitlement_required=%5B%22tags%22%2C%22playback_list_platforms%22%5D&is_content_paid=true"
+                                    style="text-decoration: none;color: white;">Watch now</a></button>
+                        </div>
+                    </div>
+
+                    <div class="movie-card"><img src="https://www.itl.cat/pngfile/big/61-611138_bahubali-movie.jpg"
+                            alt="" height="60%" width="100%" style="border-radius: 5px">
+                        <h3 style=" padding-left: 10px">Bahubali</h3>
+                        <p style=" padding-left: 10px">2015</p>
+                        <button
+                            style="border:0px; background-color:var(--best); margin-top:5px; border-radius: 10px; height:30px"
+                            onclick="showReviewForm('Bahubali')">Add Review</button>
+                        <i class="far fa-solid fa-heart favorite-icon" onclick="toggleFavorite(this)"></i>
+
+                        <div class="rating">
+                            <span class="star" onclick="addRating(1, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(2, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(3, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(4, this.parentNode.parentNode)">★</span>
+                            <span class="star" onclick="addRating(5, this.parentNode.parentNode)">★</span>
+                        </div>
+
+                        <div class="watch" style="width: 100%;">
+                            <button
+                                style="width:100%;margin-top:15px;height:28px;background-color: rgba(35, 35, 35, 0.795);;"><a
+                                    href="https://www.hotstar.com/in/movies/baahubali-the-beginning/1000074338/watch"
+                                    style="text-decoration: none;color: white;">Watch now</a></button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="review-section" id="reviewSection">
+                    <h2>Reviews</h2>
+                </div>
+
+                <div class="img2">
+                    <div class="about-section" id="about-us">
+                        <h2>About Us</h2>
+                        <p>Welcome to Stream Studio! We provide a vast collection of movies for you to explore and
+                            enjoy. Our
+                            mission is to deliver the best streaming experience to our users.</p>
+                    </div>
+
+                    <div class="contact-section" id="contact-us">
+                        <h2>Contact Us</h2>
+                        <p>Have any questions or feedback? Feel free to get in touch with us using the form below:</p>
+                        <div class="contact-form">
+                            <form action="#" method="POST">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="text" name="email" placeholder="Your Email" required>
+                                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                                <input type="submit" value="Send">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="footer">
+                        <div class="social-media">
+                            <ul>
+                                <li style="color: aliceblue; font-size: 20px;margin-top: 13px;">Reach out us at:-</li>
+                                <br>
+                                <li><a href="https://www.instagram.com/?hl=en"><i
+                                            class="fa-brands fa-instagram"></i></a> </li>
+                                <li> <a href="https://twitter.com/?lang=en-in"><i class="fa-brands fa-twitter"></i></a>
+                                </li>
+                                <li><a href="https://www.facebook.com/"> <i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="https://www.linkedin.com/login"> <i class="fa-brands fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="imp">
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li>|</li>
+                                <li><a href="#about-us">About us</a></li>
+                                <li>|</li>
+                                <li><a href="#contact-us">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

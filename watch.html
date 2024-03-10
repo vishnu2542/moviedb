@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Details</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        .card{
+
+            align-items: center;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        .card-body
+        {
+            color:white;
+        }
+
+        .para
+        {
+            color: azure;
+            margin-top: 150px;
+            margin-left: 100px;
+            margin-right: 40px;
+        }
+
+        .details
+        {
+            display: flex;
+            
+        }
+
+        #watch-details
+        {
+            animation: anm 0.5s ease-out;
+        }
+        @keyframes anm {
+            0%{
+                opacity: 0;
+                transform: scale(0);
+            }
+            100%{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .para {
+            animation: anm1 1s ease;
+        }
+
+        @keyframes anm1 {
+            0%{
+                transform: translateX(-200px);
+                opacity: 0.5;
+            }
+            100%{
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        .button button
+        {
+            font-size: 15px;
+            font-weight: bolder;
+            height:45px;
+            width:80px;
+            border-radius: 30px;
+            margin-left: 800px;
+            background-color:var(--best);
+            cursor: pointer;  
+        }
+
+        .button button:hover{
+            color: white;
+            background-color: black;
+            border: none;
+            
+        }
+        .popup-container {
+        display: none;
+        position: fixed;
+        bottom: 95px;
+        right: 125px;
+        background-color:black;
+       
+        border-radius: 5px;
+        padding: 10px;
+        z-index: 999;
+    }
+
+    .social-icons {
+        display: flex;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+        color:white; 
+        text-decoration: none; 
+    }
+    
+
+    .social-icons a:hover {
+        color:var(--best) ;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <div class="navbar" id="nav">
+        <ul>
+            <li>
+                <a href="index.html" style="text-decoration:none;"><h2 class="logo">Uniflix</h2></a>
+            </li>
+        </ul>
+        <ul class="buttons">
+            <li><a href="login.html" ><button>Login</button></a></li>
+            <li><a href="login.html" ><button>Sign up</button></a></li>
+        </ul>
+    </div>
+
+    <div class="details">
+        <div id="watch-details">
+            
+        </div>
+        <div class="para">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam suscipit sequi sed voluptates neque consequatur earum nobis aliquam, iste minima temporibus animi pariatur ratione, tenetur, aperiam recusandae eius expedita omnis?
+            Reiciendis minus quasi blanditiis veritatis ipsam dolore facilis quo alias, a perspiciatis similique saepe beatae, magni minima illo eaque tempora cupiditate assumenda necessitatibus. Labore ab animi cumque non maiores temporibus.
+            Nostrum quo nulla quos atque. Adipisci saepe delectus possimus perferendis rem est error non necessitatibus beatae esse. Sequi soluta deleniti perferendis necessitatibus veniam iusto minima nulla rem, sapiente quaerat itaque?
+            Praesentium, eveniet repudiandae optio laborum voluptatum nobis ratione consequatur nesciunt molestiae quas harum debitis repellat corrupti cumque nemo aspernatur deserunt modi omnis repellendus numquam sunt blanditiis quae magni illum! Id?
+            Excepturi, soluta. Consequuntur explicabo quis repellendus quibusdam temporibus distinctio, optio animi delectus, officia officiis ex! Adipisci alias suscipit eos nihil, esse molestiae, perferendis amet, sed corporis necessitatibus inventore quod dignissimos.
+            Fuga magni dolorem impedit aut sed reiciendis delectus porro ducimus perferendis possimus quam aperiam pariatur quas ad dolore sit, laboriosam est architecto ratione eius enim, autem dolor. Molestiae, sequi recusandae?
+            Totam, inventore ipsum provident alias deleniti ad excepturi mollitia. Dicta deserunt eveniet, iusto nemo culpa debitis sed quis maiores reiciendis fugiat quisquam dolore exercitationem, ullam quos perspiciatis voluptates cum. Nulla.
+            Corrupti tempora magni numquam neque, suscipit ipsa provident ea illo totam ducimus sed dolores voluptatem facere saepe a porro, maxime fuga ex nisi voluptatum? Nostrum beatae ipsum commodi? Omnis, quia.
+            </p>
+            <div class="button">               
+                <button  onclick="togglePopup()">share</button>
+            </div>
+
+            <div class="popup-container" id="popupContainer">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/?lang=en-in"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/login"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>   
+        </div>   
+    </div>
+
+    
+
+    <script>
+        window.onload = function() {
+            // Retrieve the query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const poster = urlParams.get('poster');
+            const title = urlParams.get('title');
+            const year = urlParams.get('year');
+            
+
+            
+            const cardDetailsHTML = `
+                <div class="card">
+                    <img src="${poster}" alt="${title} Poster">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">Year: ${year}</p>
+
+                    </div>
+                </div>
+            `;
+                    
+            
+            document.getElementById('watch-details').innerHTML = cardDetailsHTML;
+        };
+
+       
+        function togglePopup() {
+        var popup = document.getElementById('popupContainer');
+        if (popup.style.display === 'block') {
+            popup.style.display = 'none';
+        } else {
+            popup.style.display = 'block';
+        }
+    }
+        
+    </script>
+    
+</body>
+</html>
